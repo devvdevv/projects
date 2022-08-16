@@ -9,12 +9,6 @@ const filterInput = document.querySelector('.filter-repos');
 const getProfile = async () => {
     const res = await fetch(
         `https://api.github.com/users/${username}`
-        // {
-        //     headers: {
-        //         Accept: 'application/vnd.github+json',
-        //         Authorization: 'token your-personal-access-token-here'
-        //     }
-        // }
     );
     const profile = await res.json();
     displayProfile(profile);
@@ -50,13 +44,6 @@ const getRepos = async () => {
     for (let i = 1; i <= maxPages; i++) {
         res = await fetch(
             `https://api.github.com/users/${username}/repos?&sort=pushed&per_page=100&page=${i}`
-            // {
-            //     headers: {
-            //         Accept: 'application/vnd.github+json',
-            //         Authorization:
-            //             'token your-personal-access-token-here'
-            //     }
-            // }
         );
         let data = await res.json();
         repos = repos.concat(data);
