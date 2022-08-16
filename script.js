@@ -23,7 +23,7 @@ const displayProfile = (profile) => {
             <img alt="user avatar" src=${profile.avatar_url} />
         </figure>
         <div>
-            <h2><a href=${profile.blog}><strong>${profile.name}</strong></a></h2>
+            <h2><a href=${profile.blog} target="_blank"><strong>${profile.name}</strong></a></h2>
             <p>${profile.bio}</p>
             <p>
                 <strong>Location:</strong> ${profile.location}
@@ -90,11 +90,11 @@ const displayRepos = (repos) => {
 
         if (repo.homepage && repo.homepage !== "") {
             listItem.innerHTML += `<br /> <br />
-            <a class="link-btn" href=${repo.html_url}>Code ${devicons["Github"]}</a>
-            <a class="link-btn" href=${repo.homepage}>Live ${devicons["Chrome"]}</a> <br />`;
+            <a class="link-btn" href=${repo.html_url} target="_blank">Code ${devicons["Github"]}</a>
+            <a class="link-btn" href=${repo.homepage} target="_blank">Live ${devicons["Chrome"]}</a> <br />`;
         } else {
             listItem.innerHTML += `<br /> <br />
-            <a class="link-btn" href=${repo.html_url}>View Project ${devicons["Github"]}</a><br />`;
+            <a class="link-btn" href=${repo.html_url} target="_blank">View Project ${devicons["Github"]}</a><br />`;
         }
 
         repoList.append(listItem);
