@@ -1,4 +1,4 @@
-const username = 'pblongg';
+const username = 'notblong';
 const maxPages = 2;
 const hideForks = true;
 const repoList = document.querySelector('.repo-list');
